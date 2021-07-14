@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Author: Taku Noda
+Started on Nov. 29, 2020
+Update on Dec. 28, 2020
+-->
+<system name="test01">
+  
+  
+  <subsystem name="main_circuit" type="circuit">
+    <branch type="E" name="E1" lhs="N1" rhs="GND">
+      100.0*( t &gt; 0.0 )
+    </branch>
+    <branch type="R" name="DoubleRLC1/RLC1/R" val="0.2" lhs="N1" rhs="DoubleRLC1/RLC1/N2"/><branch type="L" name="DoubleRLC1/RLC1/L" val="0.01" lhs="DoubleRLC1/RLC1/N2" rhs="DoubleRLC1/RLC1/N3"/><branch type="C" name="DoubleRLC1/RLC1/C" val="0.0002533029591058444" lhs="DoubleRLC1/RLC1/N3" rhs="GND"/><branch type="R" name="DoubleRLC1/RLC2/R" val="0.5" lhs="N1" rhs="DoubleRLC1/RLC2/N2"/><branch type="L" name="DoubleRLC1/RLC2/L" val="0.001" lhs="DoubleRLC1/RLC2/N2" rhs="DoubleRLC1/RLC2/N3"/><branch type="C" name="DoubleRLC1/RLC2/C" val="2.5330295910584447e-5" lhs="DoubleRLC1/RLC2/N3" rhs="GND"/>
+  </subsystem>
+</system>

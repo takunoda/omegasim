@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Author: Taku Noda
+Started on Nov. 29, 2020
+Update on Dec. 28, 2020
+-->
+
+<system name="test01">
+  <component name="RLC" type="circuit">
+    <calc>
+      C = 1.0/( ( 2*pi*f0 )^2*L );
+    </calc>
+    <branch type="R" name="R" val="R" lhs="_p1" rhs="N2" />
+    <branch type="L" name="L" val="L" lhs="N2" rhs="N3" />
+    <branch type="C" name="C" val="C" lhs="N3" rhs="_p2" />
+  </component>
+  <component name="DoubleRLC" type="circuit">
+    <use component="RLC" as="RLC1">
+      R = 0.2;
+      L = 10.0e-3;
+      f0 = 100.0;
+      _p1 = _p1;
+      _p2 = _p2;
+    </use>
+    <use component="RLC" as="RLC2">
+      R = 0.5;
+      L = 1.0e-3;
+      f0 = 1.0e3;
+      _p1 = _p1;
+      _p2 = _p2;
+    </use>
+  </component>
+  <subsystem name="main_circuit" type="circuit">
+    <branch type="E" name="E1" lhs="N1" rhs="GND">
+      100.0*( t > 0.0 )
+    </branch>
+    <use component="DoubleRLC" as="DoubleRLC1">
+      _p1 = "N1";
+      _p2 = "GND";
+    </use>
+  </subsystem>
+</system>
