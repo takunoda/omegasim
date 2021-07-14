@@ -23,6 +23,17 @@ omegasim uses a constant time step size for all subsystems, since this strategy 
 
 At each time step, the responses of all subsystems are calculated as their outputs. Then, considering the interconnected topology, those outputs are considered as the inputs to the subsystems with allowing one time step delay. The whole system is divided into subsystems so that the one time step delay does not affect the solution. For industrial systems, this process should not be difficult, since existing subsystems are actually designed to allow one time step delay. So, once the responses of all subsystems have been calculated, the output-to-input interconnection process can be carried out by simple substitutions, and this process is repeated with respect to time so that the response of the whole system is obtained.
 
-
-
 To be continued.
+
+## Copyright Notice
+Copyright 2021 Central Research Institute of Electric Power Industry
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Document prepared by Taku Noda and update on June 29, 2021.
+
+
